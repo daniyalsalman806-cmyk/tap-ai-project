@@ -9,8 +9,8 @@ GEMINI_API_KEY = "AIzaSyDkZAK9tYHDs-dkwZdLGrp2BWcp6H7umn8"
 
 genai.configure(api_key=GEMINI_API_KEY)
 
-# Model ka naam 'gemini-1.5-pro' kar diya hai
-model = genai.GenerativeModel('gemini-1.5-pro')
+# Model ka naam 'gemini-pro' kar diya hai
+model = genai.GenerativeModel('gemini-pro')
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
