@@ -9,8 +9,8 @@ GEMINI_API_KEY = "AIzaSyDkZAK9tYHDs-dkwZdLGrp2BWcp6H7umn8"
 
 genai.configure(api_key=GEMINI_API_KEY)
 
-# Model ka naam 'gemini-pro' kar diya hai
-model = genai.GenerativeModel('gemini-pro')
+# 'gemini-1.5-flash-latest' sabse updated aur stable naam hai
+model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -31,4 +31,4 @@ if prompt := st.chat_input("TAP se kuch puchein..."):
             st.markdown(full_response)
             st.session_state.messages.append({"role": "assistant", "content": full_response})
         except Exception as e:
-            st.error(f"Error: {e}")
+            st.error(f"Ghalti: {e}")
