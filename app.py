@@ -4,9 +4,11 @@ import google.generativeai as genai
 st.set_page_config(page_title="TAP AI")
 st.title("🤖 TAP AI")
 
-# Yahan apni Gemini API Key paste karein
-GEMINI_API_KEY = "AIzaSyCb6a357iYmV6uQ3GcAOSvyHCfdeVKuhqU"
-genai.configure(api_key=)
+# YAHAN APNI GEMINI KEY DAALEIN
+# Quotes " " ke andar apni key paste karein
+GEMINI_API_KEY = "AIzaSyDkZAK9tYHDs-dkwZdLGrp2BWcp6H7umn8"
+
+genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 if "messages" not in st.session_state:
