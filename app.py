@@ -4,12 +4,13 @@ import google.generativeai as genai
 st.set_page_config(page_title="TAP AI")
 st.title("🤖 TAP AI")
 
-# YAHAN APNI GEMINI KEY DAALEIN
-# Quotes " " ke andar apni key paste karein
+# Apni Gemini Key yahan dhyan se paste karein
 GEMINI_API_KEY = "AIzaSyDkZAK9tYHDs-dkwZdLGrp2BWcp6H7umn8"
 
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+
+# Model ka naam 'gemini-1.5-pro' kar diya hai
+model = genai.GenerativeModel('gemini-1.5-pro')
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -24,7 +25,10 @@ if prompt := st.chat_input("TAP se kuch puchein..."):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        response = model.generate_content(prompt)
-        full_response = response.text
-        st.markdown(full_response)
-    st.session_state.messages.append({"role": "assistant", "content": full_response})
+        try:
+            response = model.generate_content(prompt)
+            full_response = response.text
+            st.markdown(full_response)
+            st.session_state.messages.append({"role": "assistant", "content": full_response})
+        except Exception as e:
+            st.error(f"Error: {e}")
