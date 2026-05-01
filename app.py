@@ -5,7 +5,8 @@ st.set_page_config(page_title="TAP AI")
 st.title("🤖 TAP AI")
 
 # Yahan apni OpenAI API key dalein
-client = OpenAI(api_key="YAHAN_APNI_KEY_DAALEIN")
+client = OpenAI(api_key="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")
+
 
 if "messages" not in st.session_state:
 st.session_state.messages = []
